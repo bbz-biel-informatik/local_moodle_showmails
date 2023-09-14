@@ -33,5 +33,8 @@ $PAGE->set_heading($title);
 $PAGE->navbar->add($title);
 
 echo $OUTPUT->header();
-echo $OUTPUT->render_from_template('local_bbzshowmails/list', $emails);
+echo $OUTPUT->render_from_template('local_bbzshowmails/list', [
+  "emails" => $emails,
+  "count" => count($emails),
+]);
 echo $OUTPUT->footer();

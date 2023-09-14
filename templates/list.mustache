@@ -1,1 +1,21 @@
-<textarea>Test</textarea>
+<style>
+  #bbz-mails-container {
+    width: 100%;
+  }
+</style>
+
+<h3>Mailadressen aller Teilnehmenden</h3>
+
+<textarea id="bbz-mails-container" rows="10">
+{{#emails}}{{.}}; {{/emails}}
+</textarea>
+
+<button id="bbz-mails-copy-button" class="btn btn-primary">{{count}} Mailadressen kopieren</button>
+
+<script>
+document.querySelector("#bbz-mails-copy-button").addEventListener("click", function copy() {
+  let copyText = document.querySelector("#bbz-mails-container");
+  copyText.select();
+  document.execCommand("copy");
+});
+</script>
