@@ -28,7 +28,7 @@ foreach($user_list as &$user) {
 
 $PAGE->set_url('/local/bbzshowmails/list.php');
 $PAGE->set_title($title);
-$PAGE->set_heading($title);
+$PAGE->set_heading($course->shortname);
 
 $PAGE->navbar->add($title);
 
